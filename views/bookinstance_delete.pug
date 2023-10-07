@@ -1,0 +1,23 @@
+extends layout
+
+block content
+ if status == null
+   h1 #{title}: #{bookI._id}
+   p= bookI.imprint
+
+     p #[strong Are you sure you want to delete this book Instance? ]
+
+
+
+     form(method='POST' action='')
+       div.form-group
+         input#bookInstanceId.form-control(type='hidden',name='bookInstanceId', required='true', value=bookI._id )
+
+       button.btn.btn-primary(type='submit') Delete
+ if status
+   h1 #{title}
+   if status == "Maintenance"
+    p #[strong Sadly the book is under #{status}. ]
+   else if status == "Loaned"
+    p #[strong Sadly the book is currently #{status}]
+
