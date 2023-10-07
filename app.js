@@ -5,7 +5,7 @@ const mongoDB = process.env.SECRET_KEY;
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-require("dotenv").config();
+require("./vars/.env").config();
 const mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 const catalogRouter = require("./routes/catalog");
